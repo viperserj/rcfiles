@@ -1,0 +1,43 @@
+background yes
+#avoid flicker
+double_buffer yes
+
+#own window to run simultanious 2 or more conkys
+own_window yes
+own_window_type background
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+#borders
+draw_borders no
+border_margin 3
+
+#shades
+draw_shades yes
+
+#position
+gap_x 0
+gap_y 6
+alignment bottom
+
+#behaviour
+update_interval 1
+
+#colour
+default_color aaaaaa
+default_shade_color 000000
+own_window_colour 262729
+
+#font
+use_xft yes
+xftfont Droid Sans Mono:size=8
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+#to prevent window from moving
+use_spacer none
+minimum_size 1280 0
+#                                 #
+TEXT
+${alignc}Ядро: ${color C5BC07}$kernel${color} Аптайм: ${color C5BC07}${uptime_short}${color} | ЦПУ: ${color C5BC07}${cpu}%${color} ОЗУ: ${color C5BC07}${memperc}%${color} Своп: ${color C5BC07}${swapperc}%${color} "/": ${color C5BC07}${fs_used_perc /}%${color} "/home": ${color C5BC07}${fs_used_perc /home}%${color}  | ЦПУ: ${color C5BC07}${freq_g}GHz / ${acpitemp}°C${color} | USD:${color C5BC07} ${execi 100 curl http://zenrus.ru/js/currents.js | cut -c16-20 ;}р.${color} EUR: ${color C5BC07}${execi 100 curl http://zenrus.ru/js/currents.js | cut -c22-26 ;}р.${color} | Сейчас играет: ${color C5BC07}${scroll 24 1 ${execi 1 mocp -Q "%artist - %song"}}
